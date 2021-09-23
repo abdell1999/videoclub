@@ -24,6 +24,10 @@
         }else{
 
 
+            echo "<a class='btn btn-success'>Añadir pelicula</a>";
+            echo "<br>";
+            echo "<br>";
+
             $peliculas = $conexion->query("SELECT * FROM peliculas");
             echo "<table border='1'>";
             echo "<tr><th>Titulo</th><th>Genero</th><th>País</th><th>Año</th><th>Distribuidora</th><th>Acciones</th></tr>";
@@ -34,7 +38,7 @@
                 echo "<td>" . $fila->pais . "</td>";
                 echo "<td>" . $fila->anio . "</td>";
                 echo "<td>" . $fila->distribuidora . "</td>";
-                echo "<td> <a href='#'>Editar</a> <a href='#'>Eliminar</a></td>";
+                echo "<td> <a class='btn btn-warning' href='#'>Editar</a> <a class='btn btn-danger' href='#'>Eliminar</a></td>";
                 //echo "<td><a href='index.php?action=formularioModificarLibro&idLibro=" . $fila->idLibro . "'>Modificar</a></td>";
                 //echo "<td><a href='index.php?action=borrarLibro&idLibro=" . $fila->idLibro . "'>Borrar</a></td>";
                 echo "</tr>";
