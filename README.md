@@ -1,4 +1,3 @@
-# videoclub
-Aplicación web para gestionar un videoclub.
+# Videoclub
 
-DWES - CRUD - CRUD
+Aplicación web para gestionar películas, actores y todo lo relacionado con estas.
