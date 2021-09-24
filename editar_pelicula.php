@@ -50,7 +50,7 @@ echo "<form role='form' method='POST' action='editar_pelicula.php'>
 
 <div class='form-group'>
   <label for='cartel'>Cartel de la película</label>
-  <input type='file' class='form-control' name='cartel' required>
+  <input type='file' class='form-control' name='cartel'>
 </div>
 
 
@@ -95,13 +95,15 @@ if (isset($_REQUEST['titulo']) && isset($_REQUEST['genero']) && isset($_REQUEST[
   
 
   
-    $insertar = "INSERT INTO peliculas(titulo, genero, pais, anyo, cartel) VALUES ('$titulo', '$genero', '$pais','$anyo', '$cartel')";
-    $resultado = mysqli_query($conexion, $insertar);
+   // $insertar = "INSERT INTO peliculas(titulo, genero, pais, anyo, cartel) VALUES ('$titulo', '$genero', '$pais','$anyo', '$cartel')";
+    $editar = "UPDATE peliculas SET titulo='$titulo', genero='$genero', pais='$pais', anyo='$anyo, cartel='$cartel' WHERE id='$id'";
+    
+    $resultado = mysqli_query($conexion, $editar);
 
     if ($resultado) {
       header("location:index.php");
     }else{
-      echo "Ha ocurrido un error, no se ha podido registrar la película";
+      echo "Ha ocurrido un error, no se ha podido editar la película";
     }
 
   }

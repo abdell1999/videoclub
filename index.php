@@ -40,10 +40,6 @@
 
                 
 
-
-
-                //echo "<td><a href='index.php?action=formularioModificarLibro&idLibro=" . $fila->idLibro . "'>Modificar</a></td>";
-                //echo "<td><a href='index.php?action=borrarLibro&idLibro=" . $fila->idLibro . "'>Borrar</a></td>";
                 echo "</tr>";
 
                
