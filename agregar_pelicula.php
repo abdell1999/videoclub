@@ -43,6 +43,7 @@
 
 
   <button type="submit" class="btn btn-success">Agregar</button>
+  <a href="index.php" class="btn btn-dark">Volver</a>
 </form>
 
 
@@ -66,7 +67,7 @@ if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) 
     if ($resultado) {
       header("location:index.php");
     }else{
-      echo "Ha ocurrido un error, no se ha podido registrar el nuevo usuario";
+      echo "Ha ocurrido un error, no se ha podido registrar la película";
     }
 
   }
