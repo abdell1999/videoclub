@@ -20,7 +20,7 @@
         require 'conexion.php';
 
 
-            echo "<a class='btn btn-success'>Añadir pelicula</a>";
+            echo "<a class='btn btn-success' href='agregar_pelicula.php'>Añadir pelicula</a>";
             echo "<br>";
             echo "<br>";
 
@@ -36,7 +36,7 @@
                 echo "<td><img class='card-img-top col-md-4 d-none d-md-block ml-6' src='$fila->cartel' alt='Miniatura'></td>";
                 
                 echo "<td> <a class='btn btn-warning' href='#'>Editar</a> 
-                <a class='btn btn-danger' href='eliminar.php?id=$fila->id'>Eliminar</a></td>";
+                <a class='btn btn-danger' href='eliminar_pelicula.php?id=$fila->id'>Eliminar</a></td>";
 
                 
 
