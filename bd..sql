@@ -1,7 +1,6 @@
-USE videoclub;
 DROP DATABASE IF EXISTS videoclub;
 CREATE DATABASE videoclub;
-
+USE videoclub;
 
 CREATE TABLE peliculas (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -23,9 +22,9 @@ CREATE TABLE personas (
 
 CREATE TABLE actuan (
 
-  id_actuacion INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  cod_pelicula INT UNSIGNED UNIQUE,
-  cod_persona INT UNSIGNED UNIQUE,
-  FOREIGN KEY(cod_pelicula) REFERENCES peliculas(cod_pelicula),
-  FOREIGN KEY(cod_persona) REFERENCES personas(cod_persona)
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id_pelicula INT UNSIGNED UNIQUE,
+  id_persona INT UNSIGNED UNIQUE,
+  FOREIGN KEY(id_pelicula) REFERENCES peliculas(id),
+  FOREIGN KEY(id_persona) REFERENCES personas(id)
 );
