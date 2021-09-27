@@ -14,7 +14,7 @@
 <body>
     <h1>Agregar película</h1>
 
-    <form role="form" method="POST" action="agregar_pelicula.php">
+    <form role="form" enctype="multipart/form-data" method="POST" action="agregar_pelicula.php">
   <div class="form-group">
     <label for="titulo">Título de la película</label>
     <input type="text" class="form-control" name="titulo" required>
@@ -37,6 +37,7 @@
   <div class="form-group">
     <label for="cartel">Cartel de la película</label>
     <input type="file" class="form-control" name="cartel" required>
+    <input type="hidden" value= "1" name="controlador">
   </div>
 
 
@@ -52,17 +53,38 @@
 
 
 require 'conexion.php';
-if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) && isset($_POST['anyo']) && isset($_POST['cartel'])) {
+if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) && isset($_POST['anyo'])) {
   $titulo=$_POST['titulo'];
   $genero = $_POST['genero'];
   $pais = $_POST['pais'];
   $anyo = $_POST['anyo'];
-  $cartel = $_POST['cartel'];
-  
+  //$cartel = $_POST['cartel'];
+
+
+
+  if(isset($_REQUEST['controlador'])){
+    $target_path = "C:/xampp/htdocs/dwes/videoclub/img/carteles/";
+    $basename = basename( rand(1,99999) . $_FILES['cartel']['name']);
+    $target_path = $target_path . $basename; 
+    if(move_uploaded_file($_FILES['cartel']['tmp_name'], $target_path)) {
+        echo "OKEY CRACK";
+
+        $cartel = "http://localhost/dwes/videoclub/img/carteles/$basename";
+        echo "<a href='$cartel'> IMAGEN </a>";
+    } else{
+        echo "Ha ocurrido un error, trate de nuevo!";
+        //echo "ADIOS";
+    }
+}else{
+    //echo "NO ENTRA EN LA CONDICION CRACK";
+}
+
 
   
     $insertar = "INSERT INTO peliculas(titulo, genero, pais, anyo, cartel) VALUES ('$titulo', '$genero', '$pais','$anyo', '$cartel')";
     $resultado = mysqli_query($conexion, $insertar);
+ 
+    //echo $cartel;
 
     if ($resultado) {
       header("location:index.php");
