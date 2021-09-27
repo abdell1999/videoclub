@@ -22,15 +22,18 @@
 
 
 require 'conexion.php';
+if(isset($_GET['id'])){
+
 
 $id = $_GET['id'];
 
 $consulta = $conexion->query("SELECT * FROM peliculas WHERE id='$id'");
 $pelicula = $consulta->fetch_object();
 
-echo "<form role='form' method='POST' action='editar_pelicula.php'>
+echo "<form method='POST' action='editar_pelicula_2.php'>
 <div class='form-group'>
   <label for='titulo'>Título de la película:</label>
+  <input type='hidden' name='id' value='$id'>
   <input type='text' class='form-control' name='titulo' value = '$pelicula->titulo' required>
 </div>
 <div class='form-group'>
@@ -50,7 +53,7 @@ echo "<form role='form' method='POST' action='editar_pelicula.php'>
 
 <div class='form-group'>
   <label for='cartel'>Cartel de la película</label>
-  <input type='file' class='form-control' name='cartel'>
+  <input type='text' class='form-control' name='cartel'>
 </div>
 
 
@@ -86,27 +89,6 @@ echo "<form role='form' method='POST' action='editar_pelicula.php'>
 
 
 
-if (isset($_REQUEST['titulo']) && isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anyo']) && isset($_REQUEST['cartel'])) {
-  $titulo=$_REQUEST['titulo'];
-  $genero = $_REQUEST['genero'];
-  $pais = $_REQUEST['pais'];
-  $anyo = $_REQUEST['anyo'];
-  $cartel = $_REQUEST['cartel'];
-  
-
-  
-   // $insertar = "INSERT INTO peliculas(titulo, genero, pais, anyo, cartel) VALUES ('$titulo', '$genero', '$pais','$anyo', '$cartel')";
-    $editar = "UPDATE peliculas SET titulo='$titulo', genero='$genero', pais='$pais', anyo='$anyo, cartel='$cartel' WHERE id='$id'";
-    
-    $resultado = mysqli_query($conexion, $editar);
-
-    if ($resultado) {
-      header("location:index.php");
-    }else{
-      echo "Ha ocurrido un error, no se ha podido editar la película";
-    }
-
-  }
 
 
 
@@ -117,6 +99,9 @@ if (isset($_REQUEST['titulo']) && isset($_REQUEST['genero']) && isset($_REQUEST[
 
 
 
+}else{
+  echo "<h1>ERROR 777</h1>";
+}
 ?>
 
 </body>
