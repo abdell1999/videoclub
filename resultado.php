@@ -19,7 +19,7 @@
 
         require 'conexion.php';
 
-        echo "<form class='form-inline' method='GET' action='index.php'>
+        echo "<form class='form-inline' method='GET' action='resultado.php'>
         <input class='form-control mr-sm-2' name='busqueda' type='search' placeholder='Buscar' aria-label='Search'>
         <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Buscar</button>
         </form>";
@@ -32,19 +32,10 @@
             echo "<br>";
 
             //if(isset($_REQUEST['busqueda'])){
-                if(isset($_REQUEST['busqueda'])){
-                    $busqueda = $_REQUEST['busqueda'];
-                    $peliculas = $conexion->query("SELECT * FROM peliculas WHERE titulo LIKE '%$busqueda%'");
-                }else{
-                    $peliculas = $conexion->query("SELECT * FROM peliculas");
-                }
-                
-                
-                
-                
-                
+                $busqueda = $_REQUEST['busqueda'];
+                $peliculas = $conexion->query("SELECT * FROM peliculas WHERE titulo LIKE '%$busqueda%'");
                 //$peliculas = $conexion->query("SELECT * FROM peliculas");
-                
+                echo "HOLA";
            // }else{
              //   $peliculas = $conexion->query("SELECT * FROM peliculas");
              //   echo "ADIOS";
@@ -73,3 +64,52 @@
                 
             }
             echo "</table>";
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+    ?>
+
+
+
+
+
+</body>
+</html>
