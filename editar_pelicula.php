@@ -12,12 +12,6 @@
     <title>Editar película</title>
 </head>
 <body>
-    <h1>Editar película</h1>
-
-   
-
-
-
 <?php
 
 
@@ -30,6 +24,7 @@ $id = $_GET['id'];
 $consulta = $conexion->query("SELECT * FROM peliculas WHERE id='$id'");
 $pelicula = $consulta->fetch_object();
 
+echo "<div class='container'> <h1>Editar película</h1>";
 echo "<form method='POST' action='editar_pelicula_2.php'>
 <div class='form-group'>
   <label for='titulo'>Título de la película:</label>
@@ -52,8 +47,13 @@ echo "<form method='POST' action='editar_pelicula_2.php'>
 
 
 <div class='form-group'>
+
   <label for='cartel'>Cartel de la película</label>
-  <input type='text' class='form-control' name='cartel'>
+  <input type='file' class='form-control' name='cartel'>
+  <br>
+  <br>
+  Cartel actual:
+  <img class='card-img-top col-md-4 d-none d-md-block ml-6' src='$pelicula->cartel' alt='Cartel'>
 </div>
 
 
@@ -61,7 +61,7 @@ echo "<form method='POST' action='editar_pelicula_2.php'>
 
 <button type='submit' class='btn btn-warning'>Editar</button>
 <a href='index.php' class='btn btn-dark'>Volver</a>
-</form>";
+</form></div>";
 
 
 

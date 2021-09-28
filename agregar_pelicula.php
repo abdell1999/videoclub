@@ -12,44 +12,46 @@
     <title>Agregar película</title>
 </head>
 <body>
-    <h1>Agregar película</h1>
-
-    <form role="form" enctype="multipart/form-data" method="POST" action="agregar_pelicula.php">
-  <div class="form-group">
-    <label for="titulo">Título de la película</label>
-    <input type="text" class="form-control" name="titulo" required>
-  </div>
-  <div class="form-group">
-    <label for="genero">Género de la película</label>
-    <input type="text" class="form-control" name="genero" required>
-  </div>
-  <div class="form-group">
-    <label for="pais">País de la película</label>
-    <input type="text" class="form-control" name="pais" required>
-  </div>
-  <div class="form-group">
-    <label for="anyo">Año de la película</label>
-    <input type="number" class="form-control" name="anyo" required>
-  </div>
-
-
-
-  <div class="form-group">
-    <label for="cartel">Cartel de la película</label>
-    <input type="file" class="form-control" name="cartel" required>
-    <input type="hidden" value= "1" name="controlador">
-  </div>
-
-
-
-
-  <button type="submit" class="btn btn-success">Agregar</button>
-  <a href="index.php" class="btn btn-dark">Volver</a>
-</form>
-
-
-
+    
 <?php
+
+
+echo "<div class='container'> <h1>Agregar película</h1>";
+
+echo "<form role='form' enctype='multipart/form-data' method='POST' action='agregar_pelicula.php'>
+<div class='form-group'>
+  <label for='titulo'>Título de la película</label>
+  <input type='text' class='form-control' name='titulo' required>
+</div>
+<div class='form-group'>
+  <label for='genero'>Género de la película</label>
+  <input type='text' class='form-control' name='genero' required>
+</div>
+<div class='form-group'>
+  <label for='pais'>País de la película</label>
+  <input type='text' class='form-control' name='pais' required>
+</div>
+<div class='form-group'>
+  <label for='anyo'>Año de la película</label>
+  <input type='number' class='form-control' name='anyo' required>
+</div>
+
+
+
+<div class='form-group'>
+  <label for='cartel'>Cartel de la película</label>
+  <input type='file' class='form-control' name='cartel' required>
+  <input type='hidden' value= '1' name='controlador'>
+</div>
+
+
+
+
+<button type='submit' class='btn btn-success'>Agregar</button>
+<a href='index.php' class='btn btn-dark'>Volver</a>
+</form></div>";
+
+
 
 
 require 'conexion.php';
