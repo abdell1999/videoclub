@@ -13,7 +13,20 @@
 </head>
 <body>
     
-    
+<script type="text/javascript">
+
+function confirmar() {
+	var idE = document.getElementById("idE").value;
+
+	if(confirm("¿ESTAS SEGUR@?"))
+		{window.location = "eliminar_persona.php?id="+idE;
+	}
+}
+
+</script>    
+
+
+
     <?php
         
 
@@ -83,7 +96,7 @@
                 </td>
                 <td>
                 <a class='btn btn-warning' href='editar_persona.php?id=$fila->id'>Editar</a> 
-                <a class='btn btn-danger' href='eliminar_persona.php?id=$fila->id'>Eliminar</a>
+                <input id='idE' type='hidden' value= '$fila->id'><a class='btn btn-danger' onclick='confirmar()'>Eliminar</a>
                 </td>
 
               </tr>
@@ -92,4 +105,5 @@
             }
             
           echo "</table></div>";
+
         
