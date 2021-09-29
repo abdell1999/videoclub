@@ -1,12 +1,31 @@
 <?php
 require 'conexion.php';
-if (isset($_REQUEST['id']) && isset($_REQUEST['titulo']) && isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anyo']) && isset($_REQUEST['cartel'])) {
+if (isset($_REQUEST['id']) && isset($_REQUEST['titulo']) && isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anyo'])) {
     $titulo=$_REQUEST['titulo'];
     $genero = $_REQUEST['genero'];
     $pais = $_REQUEST['pais'];
     $anyo = $_REQUEST['anyo'];
-    $cartel = $_REQUEST['cartel'];
     $id = $_REQUEST['id'];
+
+    
+
+    if (isset($_REQUEST['cartel'])) {
+      
+      $cartel = "CON IMAGEN";
+        
+
+
+
+
+
+
+    }else{
+      
+      $cartel = "SIN IMAGEN";
+      
+    
+   
+    }
     
   
     
@@ -21,8 +40,10 @@ if (isset($_REQUEST['id']) && isset($_REQUEST['titulo']) && isset($_REQUEST['gen
         echo "Ha ocurrido un error, no se ha podido editar la película";
       }
   
-    }
-
+    
+}else{
+  echo "<h1>ERROR 444444444</h1>";
+}
 
 
 ?>

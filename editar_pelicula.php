@@ -25,7 +25,7 @@ $consulta = $conexion->query("SELECT * FROM peliculas WHERE id='$id'");
 $pelicula = $consulta->fetch_object();
 
 echo "<div class='container'> <h1>Editar película</h1>";
-echo "<form method='POST' action='editar_pelicula_2.php'>
+echo "<form method='POST' enctype='multipart/form-data' action='editar_pelicula_2.php' >
 <div class='form-group'>
   <label for='titulo'>Título de la película:</label>
   <input type='hidden' name='id' value='$id'>
@@ -50,10 +50,12 @@ echo "<form method='POST' action='editar_pelicula_2.php'>
 
   <label for='cartel'>Cartel de la película</label>
   <input type='file' class='form-control' name='cartel'>
+  <input type='hidden' value='$pelicula->cartel' name='cartelOld'>
   <br>
   <br>
   Cartel actual:
   <img class='card-img-top col-md-4 d-none d-md-block ml-6' src='$pelicula->cartel' alt='Cartel'>
+  
 </div>
 
 

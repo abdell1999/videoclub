@@ -78,7 +78,7 @@ if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) 
         //echo "ADIOS";
     }
 }else{
-    //echo "NO ENTRA EN LA CONDICION CRACK";
+    echo "NO ENTRA EN LA CONDICION";
 }
 
 
