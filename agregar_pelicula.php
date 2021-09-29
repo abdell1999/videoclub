@@ -89,7 +89,7 @@ if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) 
     //echo $cartel;
 
     if ($resultado) {
-      header("location:index.php");
+      header("location:peliculas.php");
     }else{
       echo "Ha ocurrido un error, no se ha podido registrar la película";
     }

@@ -7,21 +7,28 @@ if (isset($_REQUEST['id']) && isset($_REQUEST['titulo']) && isset($_REQUEST['gen
     $anyo = $_REQUEST['anyo'];
     $id = $_REQUEST['id'];
 
+
+    if($_FILES['cartel']['name'] != ""){
+      $target_path = "C:/xampp/htdocs/dwes/videoclub/img/carteles/";
+    $basename = basename( rand(1,99999) . $_FILES['cartel']['name']);
+    $target_path = $target_path . $basename; 
+    if(move_uploaded_file($_FILES['cartel']['tmp_name'], $target_path)) {
+        echo "OKEY CRACK";
+
+        $cartel = "http://localhost/dwes/videoclub/img/carteles/$basename";
+        echo "<a href='$cartel'> IMAGEN </a>";
+    } else{
+        echo "Ha ocurrido un error, trate de nuevo!";
+        //echo "ADIOS";
     
-
-    if (isset($_REQUEST['cartel'])) {
+}
       
-      $cartel = "CON IMAGEN";
+      
         
-
-
-
-
-
 
     }else{
       
-      $cartel = "SIN IMAGEN";
+      $cartel = $_REQUEST['cartelOld'];
       
     
    
@@ -35,7 +42,7 @@ if (isset($_REQUEST['id']) && isset($_REQUEST['titulo']) && isset($_REQUEST['gen
       $resultado = mysqli_query($conexion, $editar);
   
       if ($resultado) {
-        header("location:index.php");
+        header("location:peliculas.php");
       }else{
         echo "Ha ocurrido un error, no se ha podido editar la película";
       }

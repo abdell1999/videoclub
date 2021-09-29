@@ -62,7 +62,7 @@ echo "<form method='POST' enctype='multipart/form-data' action='editar_pelicula_
 
 
 <button type='submit' class='btn btn-warning'>Editar</button>
-<a href='index.php' class='btn btn-dark'>Volver</a>
+<a href='peliculas.php' class='btn btn-dark'>Volver</a>
 </form></div>";
 
 
