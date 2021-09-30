@@ -17,7 +17,7 @@
     
     <?php
         
-
+        require 'header.php';
         require 'conexion.php';
 
         $consulta = $conexion->query("SELECT DISTINCT actuan.id_persona FROM peliculas

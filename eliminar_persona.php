@@ -3,6 +3,34 @@ require 'conexion.php';
 
 $id = $_GET['id'];
 
+
+$comprobacion = "SELECT * FROM actuan WHERE id_persona='$id'";
+
+if($comprobacion!=0){
+
+    $pasoPrevio = "DELETE FROM actuan WHERE id_persona='$id'";
+
+    mysqli_query($conexion, $pasoPrevio);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $eliminar = "DELETE FROM personas WHERE id='$id'";
 mysqli_query($conexion, $eliminar);
 

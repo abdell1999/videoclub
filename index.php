@@ -12,11 +12,12 @@
     <title>Videoclub</title>
 </head>
 <body>
+
     
     
     <?php
         
-
+        require 'header.php';
         require 'conexion.php';
 
         echo "<div class='container'><h1>Videoclub</h1>";

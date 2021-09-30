@@ -14,7 +14,7 @@
 <body>
     
 <?php
-
+require 'header.php';
 
 echo "<div class='container'> <h1>Agregar actor</h1>";
 

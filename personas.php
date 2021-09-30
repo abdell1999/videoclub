@@ -29,7 +29,7 @@ function confirmar() {
 
     <?php
         
-
+        require 'header.php';
         require 'conexion.php';
 
         echo "<div class='container'><h1>Actores</h1>";
