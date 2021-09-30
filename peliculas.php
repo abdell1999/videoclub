@@ -12,6 +12,17 @@
     <title>Videoclub</title>
 </head>
 <body>
+<script type="text/javascript">
+
+function confirmar() {
+	var idE = document.getElementById("idE").value;
+
+	if(confirm("¿ESTAS SEGUR@?"))
+		{window.location = "eliminar_pelicula.php?id="+idE;
+	}
+}
+
+</script>   
     
     
     <?php
@@ -88,7 +99,7 @@
                 <td>
                 <a class='btn btn-success' href='$fila->trailer' target='_blank'>Ver trailer</a> 
                 <a class='btn btn-warning' href='editar_pelicula.php?id=$fila->id'>Editar</a> 
-                <a class='btn btn-danger' href='eliminar_pelicula.php?id=$fila->id'>Eliminar</a>
+                <input id='idE' type='hidden' value= '$fila->id'><a class='btn btn-danger' onclick='confirmar()'>Eliminar</a>
                 </td>
 
               </tr>

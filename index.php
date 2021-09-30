@@ -22,7 +22,8 @@
         echo "<div class='container'><h1>Videoclub</h1>";
 
         echo "<a href='peliculas.php'>Peliculas</a><br>";
-        echo "<a href='personas.php'>Actores</a>";
+        echo "<a href='personas.php'>Actores</a><br>";
+        echo "<a href='actuan.php'>Peliculas y Actores</a>";
             
         echo "</div>";
         
