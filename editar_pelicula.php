@@ -45,6 +45,12 @@ echo "<form method='POST' enctype='multipart/form-data' action='editar_pelicula_
 </div>
 
 
+<div class='form-group'>
+  <label for='anyo'>Enlace al trailer:</label>
+  <input type='text' class='form-control' name='trailer' value = '$pelicula->trailer' required>
+</div>
+
+
 
 <div class='form-group'>
 
