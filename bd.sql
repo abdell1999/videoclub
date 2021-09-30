@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2021 a las 17:39:43
+-- Tiempo de generación: 30-09-2021 a las 22:24:37
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -45,17 +45,9 @@ CREATE TABLE `peliculas` (
   `genero` varchar(45) NOT NULL,
   `pais` varchar(45) NOT NULL,
   `anyo` varchar(45) NOT NULL,
-  `cartel` varchar(2000) NOT NULL
+  `cartel` varchar(2000) NOT NULL,
+  `trailer` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `peliculas`
---
-
-INSERT INTO `peliculas` (`id`, `titulo`, `genero`, `pais`, `anyo`, `cartel`) VALUES
-(10, 'SuperMM', 'Oscuro', 'Pensilvania', '2015', 'http://localhost/dwes/videoclub/img/carteles/93258superman.jfif'),
-(11, 'Rando7489', 'Random', 'Random', '1969', 'http://localhost/dwes/videoclub/img/carteles/11883batman.jpg'),
-(12, 'BUENASTARDES', 'Superhéroes', 'Andorra', '1999', 'http://localhost/dwes/videoclub/img/carteles/94494WhatsApp Image 2021-09-28 at 09.15.56.jpeg');
 
 -- --------------------------------------------------------
 
@@ -72,14 +64,6 @@ CREATE TABLE `personas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `personas`
---
-
-INSERT INTO `personas` (`id`, `nombre`, `apellido1`, `apellido2`, `fotografia`) VALUES
-(10, 'Cristian', 'Rosca', '', 'http://localhost/dwes/videoclub/img/fotografias/81672batman.jpg'),
-(11, 'PACO', 'paco', '', 'http://localhost/dwes/videoclub/img/fotografias/52590WhatsApp Image 2021-09-28 at 09.15.56.jpeg');
-
---
 -- Índices para tablas volcadas
 --
 
@@ -88,8 +72,8 @@ INSERT INTO `personas` (`id`, `nombre`, `apellido1`, `apellido2`, `fotografia`) 
 --
 ALTER TABLE `actuan`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_pelicula` (`id_pelicula`),
-  ADD UNIQUE KEY `id_persona` (`id_persona`);
+  ADD KEY `id_pelicula` (`id_pelicula`),
+  ADD KEY `id_persona` (`id_persona`);
 
 --
 -- Indices de la tabla `peliculas`
@@ -111,19 +95,19 @@ ALTER TABLE `personas`
 -- AUTO_INCREMENT de la tabla `actuan`
 --
 ALTER TABLE `actuan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
