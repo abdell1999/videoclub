@@ -37,6 +37,12 @@ echo "<form role='form' enctype='multipart/form-data' method='POST' action='agre
 </div>
 
 
+<div class='form-group'>
+  <label for='trailer'>Enlace al trailer</label>
+  <input type='text' class='form-control' name='trailer' required>
+</div>
+
+
 
 <div class='form-group'>
   <label for='cartel'>Cartel de la película</label>
@@ -55,11 +61,12 @@ echo "<form role='form' enctype='multipart/form-data' method='POST' action='agre
 
 
 require 'conexion.php';
-if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) && isset($_POST['anyo'])) {
+if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) && isset($_POST['anyo']) && isset($_POST['trailer'])) {
   $titulo=$_POST['titulo'];
   $genero = $_POST['genero'];
   $pais = $_POST['pais'];
   $anyo = $_POST['anyo'];
+  $trailer = $_POST['trailer'];
   //$cartel = $_POST['cartel'];
 
 
@@ -83,7 +90,7 @@ if (isset($_POST['titulo']) && isset($_POST['genero']) && isset($_POST['pais']) 
 
 
   
-    $insertar = "INSERT INTO peliculas(titulo, genero, pais, anyo, cartel) VALUES ('$titulo', '$genero', '$pais','$anyo', '$cartel')";
+    $insertar = "INSERT INTO peliculas(titulo, genero, pais, anyo, trailer, cartel) VALUES ('$titulo', '$genero', '$pais','$anyo', '$trailer', '$cartel')";
     $resultado = mysqli_query($conexion, $insertar);
  
     //echo $cartel;

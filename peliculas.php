@@ -86,6 +86,7 @@
                 <img class='card-img-top col-md-4 d-none d-md-block ml-6' src='$fila->cartel' alt='Cartel'>
                 </td>
                 <td>
+                <a class='btn btn-success' href='$fila->trailer' target='_blank'>Ver trailer</a> 
                 <a class='btn btn-warning' href='editar_pelicula.php?id=$fila->id'>Editar</a> 
                 <a class='btn btn-danger' href='eliminar_pelicula.php?id=$fila->id'>Eliminar</a>
                 </td>
